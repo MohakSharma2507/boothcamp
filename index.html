@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Data Science with Artificial Intelligence</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .header {
+            background: rgb(42, 42, 42);
+            color: rgb(247, 247, 244);
+            font-family: sans-serif;
+            margin: 0%;
+            padding: 100px;
+            border: none;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            display: inline;
+        }
+
+        .header p {
+            color: rgb(255, 251, 251);
+            font-family: sans-serif;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+        .icon {
+            height: 40px;
+            width: 40px;
+            margin: 5px;
+        }
+
+        .icon_text {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: black;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .body {
+            border: 0px;
+            margin: 0%;
+            background-color:aliceblue;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .main-card,
+        .side-card {
+            width: 400px;
+            height: 500px;
+            border-radius: 25px;
+            padding-left: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-card {
+            background-color: rgb(86, 86, 86);
+            margin-right: 20px;
+        }
+
+        .side-card {
+            background-color: rgb(86, 86, 86);
+        }
+
+        .side-container_1 {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        
+        .side-container_2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .center-card {
+            width: 700px;
+            height: 150px;
+            border-radius: 25px;
+            border: 2px solid red;
+            background-color: aliceblue;
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            font-family: sans-serif;
+            position: relative;
+        }
+
+        .center-text {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .company-icons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .company-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .card-img-top{
+          align-items: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .module {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-family: sans-serif;
+            font-style: oblique;
+        }
+
+        .module:hover {
+            background-color: #f4f4f4;
+        }
+
+        .module-content {
+            display: none;
+            padding: 10px 20px;
+            font-family: sans-serif;
+        }
+        
+
+        .container_2 {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-size: contain;
+        }
+
+        .module_2 {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            background-size: contain;
+        }
+
+        .module_2:hover {
+            transform: scale(1.05);
+        }
+
+        .module-content_2 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #2851b9; /* Set your preferred color */
+            color: rgb(255, 255, 255);
+            transform: translateY(100%);
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .module_2:hover .module-content_2 {
+            transform: translateY(0);
+        }
+
+        .module_2-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .module_2-description {
+            font-size: 14px;
+        }
+
+        /* Color classes for cards */
+        .module_2-ml {
+            background: url(data-science.png);
+            opacity: 50;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .module_2-dl {
+            background: url(data-analytics.png);
+            opacity: 50;
+        }
+
+        .module_2-nlp {
+            background: url(science-report.png);
+            opacity: 50;
+        }
+
+        .module_2-orange {
+            background-color: #ffb75e;
+        }
+
+
+        .container_btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .enroll-button {
+            padding: 15px 30px;
+            background-color: #003cff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: pulse 1s infinite;
+            text-decoration: none;
+        }
+
+        .enroll-button:hover {
+            background-color: #fa064f;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+    
+
+
+    </style>
+</head>
+
+<body style="border:0px;margin: 0px; background-color: aliceblue;">
+
+    <div class="header">
+        <center>
+            <h1><b>Learn <span style="color: yellow; display: inline;">Data Science with Artificial Intelligence</span> with SKETO </b></h1>
+            <p>Enroll now in our Data Science with Artificial Intelligence course and embark on a transformative journey to become a proficient data scientist equipped with powerful Artificial Intelligence skills. Join us today and take the first step towards mastering data science with Artificial Intelligence!</p>
+        </center>
+        
+        <div class="card-container">
+            <div class="main-card">
+                <img class="card-img-top" style="margin-top: 25px;margin-right: 100px; border-radius: 20px; width: 300px;" src="DS with Python & ML.png" alt="Card image cap">
+                <div class="card-body" style="margin-top: 25px; margin-right: 100px;">
+                    <div class="card" style="width: 450px;height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center;" >
+                        <img class="icon" style="margin-left: 10px;" src="clock.png">
+                        <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;padding-right: 50px; padding-left: 25px;">162+ hours of training</p>
+                    </div>
+        
+                    <div class="card" style="width: 450px;height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center;margin-top: 20px;" >
+                        <img class="icon" style="margin-left: 10px;" src="student.png">
+                        <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;padding-right: 50px; padding-left: 25px;">50+ students trained</p>
+                    </div>
+        
+                    <div class="card" style="width: 450px;height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center;margin-top: 20px;" >
+                        <img class="icon" style="margin-left: 10px;" src="cap.png">
+                        <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;padding-right: 50px; padding-left: 25px;">Trained by working professionals</p>
+                    </div>
+        
+                    <div class="card" style="width: 450px;height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center;margin-top: 20px;" >
+                        <img class="icon" style="margin-left: 10px;" src="star.png">
+                        <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;padding-right: 50px; padding-left: 25px;">4.8/5 rating</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-card">
+                <img class="card-img-top" style="margin-top: 25px;margin-right: 100px;   border-radius: 20px; width: 400px;height: 250px;" src="machinelearning.jpg" alt="Card image cap">
+                <div class="card-body" style="margin-top: 25px; margin-right: 100px;">
+                    <div class="card" style="width: 450px;height: 100px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center;" >
+                        <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;margin-left: 50px;">Premanjan Biswas </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       </div>
+       <center><div class="center-card" >
+        <div class="center-text">People we've trained work at</div>
+        <div class="company-icons">
+            <!-- Add your 10 company icons here -->
+            <img class="company-icon" src="google.png" alt="Company 1">
+            <img class="company-icon" src="tcs.png" alt="Company 2">
+            <img class="company-icon" src="Wipro.png" alt="Company 3">
+            <img class="company-icon" src="paytm.png" alt="Company 4">
+            <img class="company-icon" src="shopping.png" alt="Company 5"><br>
+
+            <img class="company-icon"  style="position: relative;"  src="tecgmahindra.png" alt="Company 6">
+            <img class="company-icon" src="apple-logo.png" alt="Company 7">
+            <img class="company-icon" src="samsung.png" alt="Company 8">
+            <img class="company-icon" src="Infosys_logo.svg.png" alt="Company 9">
+            <img class="company-icon" src="nike.png" alt="Company 10">
+            <!-- ... Add more icons as needed -->
+        </div>
+    </div>
+</div></center>
+
+<div class="body">
+  <center>
+      <div class="card-container" style="display: flex; justify-content: space-between;">
+          <!-- Left Side Container -->
+          <div class="side-container_1" style="align-items: center; flex: 1;">
+              <div class="card" style="width: 300px; height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center; margin-top: 20px;">
+                  <img class="icon" style="margin-left: 10px;" src="check-mark.png">
+                  <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Working professionals</p>
+              </div>
+
+              <div class="card" style="width: 300px; height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center; margin-top: 20px;">
+                  <img class="icon" style="margin-left: 10px;" src="check-mark.png">
+                  <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">College Students</p>
+              </div>
+
+              <div class="card" style="width: 300px; height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center; margin-top: 20px;">
+                  <img class="icon" style="margin-left: 10px;" src="check-mark.png">
+                  <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Software</p>
+              </div>
+          </div>
+
+          <!-- Right Side Container -->
+          <div class="side-container_2" style="align-items: center; flex: 1;">
+              <div class="card" style="width: 300px; height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center; margin-top: 20px;">
+                  <img class="icon" style="margin-left: 10px;" src="check-mark.png">
+                  <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Statistics professionals</p>
+              </div>
+
+              <div class="card" style="width: 300px; height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center; margin-top: 20px;">
+                  <img class="icon" style="margin-left: 10px;" src="check-mark.png">
+                  <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Researchers</p>
+              </div>
+
+              <div class="card" style="width: 300px; height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center; margin-top: 20px;">
+                  <img class="icon" style="margin-left: 10px;" src="check-mark.png">
+                  <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Anyone wanting to learn Data Science</p>
+              </div>
+          </div>
+      </div>
+  </center>
+</div>
+
+<center>
+  <h1 class="h1" style="margin-top: 100px;font-family: sans-serif;">What will you <span style="color: rgb(0, 8, 255); display: inline;">learn</span> in the course? </h1>
+</center>
+
+<center></center>
+
+<div class="container_2">
+    <!-- Card 1 -->
+    <div class="module_2 module_2-ml">
+        <div class="module-content_2">
+            <h2 class="module_2-title">Module 1: Machine Learning</h2>
+            <p class="module_2-description">Overview of the course and what to expect.</p>
+        </div>
+    </div>
+
+
+    <div class="module_2 module_2-dl">
+        <div class="module-content_2">
+            <h2 class="module_2-title">Module 2: Deep Learning</h2>
+            <p class="module_2-description">Overview of the course and what to expect.</p>
+        </div>
+    </div>
+
+    <div class="module_2 module_2-nlp">
+        <div class="module-content_2">
+            <h2 class="module_2-title">Module 3: Natural Language Processing</h2>
+            <p class="module_2-description">Overview of the course and what to expect.</p>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+  <center>
+    <h1 class="h1" style="margin-top: 100px;font-family: sans-serif;">By the end of the course you will have a clear roadmap on how</span> in the course? </h1>
+  </center>
+
+  <div class="body">
+    <center>
+        <div class="card-container" style="display: flex; justify-content: space-between;">
+            <!-- Left Side Container -->
+            <div class="side-container_1" style="align-items: center; flex: 1;">
+                <div class="card" style="width: 300px; height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center; margin-top: 20px;">
+                    <img class="icon" style="margin-left: 10px;" src="checklist.png">
+                    <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Make prediction models</p>
+                </div>
+  
+                <div class="card" style="width: 300px; height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center; margin-top: 20px;">
+                    <img class="icon" style="margin-left: 10px;" src="checklist.png">
+                    <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Make chat bots</p>
+                </div>
+  
+                <div class="card" style="width: 300px; height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center; margin-top: 20px;">
+                    <img class="icon" style="margin-left: 10px;" src="checklist.png">
+                    <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Use of Artificial Intelligence</p>
+                </div>
+            </div>
+  
+            <!-- Right Side Container -->
+            <div class="side-container_2" style="align-items: center; flex: 1;">
+                <div class="card" style="width: 300px; height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center; margin-top: 20px;">
+                    <img class="icon" style="margin-left: 10px;" src="checklist.png">
+                    <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Statistical approaches</p>
+                </div>
+  
+                <div class="card" style="width: 300px; height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center; margin-top: 20px;">
+                    <img class="icon" style="margin-left: 10px;" src="checklist.png">
+                    <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Image/Object detetion</p>
+                </div>
+  
+                <div class="card" style="width: 300px; height: 50px; background-color: rgb(248, 242, 242); border-radius: 10px; display: flex; align-items: center; margin-top: 20px;">
+                    <img class="icon" style="margin-left: 10px;" src="checklist.png">
+                    <p class="icon_text" style="color: black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ChatGPT
+                    </p>
+                </div>
+            </div>
+        </div>
+    </center>
+
+
+    <center>
+        <h1 class="h1" style="margin-top: 100px;font-family: sans-serif;color: crimson;">FAQ's</h1>
+      </center>
+  
+
+
+<div class="container">
+  <!-- FAQ 1 -->
+  <div class="module">
+    1. What is the difference between Data Science and Computer Science?
+      <div class="module-content">
+          <p>Data Science involves the analysis of large datasets using coding and statistics to find patterns in this data. Computer Science, on the other hand, involves using logic to write codes that will help complete tasks of varying levels of complexity.</p>
+      </div>
+  </div>
+
+  <!-- FAQ 1 -->
+  <div class="module">
+    2. Can I pursue a Data Science degree without Maths or Computer Science in my undergrad?
+      <div class="module-content">
+          <p>Even if you think you have previously struggled with mathematics, you can still master the data science math abilities. No doubt , Data Science requires an understanding of math, but the necessary Data Science math skills can be learned.</p>
+      </div>
+  </div>
+
+  <!-- FAQ 3 -->
+  <div class="module">
+    3. What do Data Scientists do?
+      <div class="module-content">
+          <p>The main job of Data Scientists is to analyze large amounts of data using artificial intelligence and statistics to make sense of it and to find patterns in this data, to be able to apply the derived knowledge in solving real-world problems.</p>
+      </div>
+  </div>
+
+  <!-- FAQ 4 -->
+  <div class="module">
+    4. Why is Data Science trending?
+      <div class="module-content">
+          <p>In this modern world, huge amounts of data is being produced every second. Data Science helps make sense of this data and is a professional career.</p>
+      </div>
+  </div>
+
+</div>
+
+<center>
+    <div class="container_2">
+        <a href="https://wa.me/message/RTGYV5PGIEOYC1" class="enroll-button">Start learning from today</a>
+    </div>
+
+</center>
+
+<center>
+    <h3 style="margin-top: 25px;font-family: 'Times New Roman';color: rgb(0, 0, 0);">Visit our office to get instant discounts!</h3>
+  </center>
+
+</center>
+<footer>
+  &copy; 2024 Professional Course Module. All rights reserved.
+</footer>
+
+
+
+<script>
+  // Add interactivity to toggle module content
+  const modules = document.querySelectorAll('.module');
+
+  modules.forEach(module => {
+      module.addEventListener('click', () => {
+          const content = module.querySelector('.module-content');
+          content.style.display = content.style.display === 'none' ? 'block' : 'none';
+      });
+  });
+</script>
+
+
+
+</body>
+
+</html>
